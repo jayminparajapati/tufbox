@@ -3,9 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tufbox Cricket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Tufbox — book cricket pitches, see prices, and contact the ground.">
 </head>
 <body>
-    <h1> tufbox booking </h1>
+    <header class="site-header">
+        <div class="brand">
+            <div class="logo" aria-hidden="true">TB</div>
+            <div>
+                <div class="title">Tufbox</div>
+                <div class="subtitle">Cricket Ground Booking</div>
+            </div>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#prices">Prices</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="cta"><a href="#booking">Book a Slot</a></div>
+    </header>
+
+    <main>
+        <section id="hero" class="container">
+            <h1>Reserve your Tufbox cricket pitch</h1>
+            <p class="lead">Easy online bookings for practice and matches — secure your slot in seconds.</p>
+        </section>
+
+        <section id="booking" class="container card">
+            <h2>Book Your Game</h2>
+            <form id="bookingForm">
+                <div class="row">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+
+                <div class="row two">
+                    <div>
+                        <label for="date">Date</label>
+                        <input id="date" name="date" type="date" required>
+                    </div>
+                    <div>
+                        <label for="time">Start time</label>
+                        <input id="time" name="time" type="time" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="duration">Duration (hours)</label>
+                    <select id="duration" name="duration">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="row actions">
+                    <button type="submit" class="btn primary">Confirm Booking</button>
+                    <button type="button" id="clearBookings" class="btn muted">Clear Bookings</button>
+                </div>
+            </form>
+
+            <div id="confirmation" class="confirmation" hidden></div>
+
+            <h3>Your Bookings</h3>
+            <div id="bookingsList" class="bookings-list"></div>
+        </section>
+
+        <section id="prices" class="container card">
+            <h2>Prices</h2>
+            <ul>
+                <li>Weekday (per hour): $15</li>
+                <li>Weekend (per hour): $20</li>
+                <li>Floodlights (per slot): $10</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="container card">
+            <h2>Contact</h2>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Tufbox Lane, Cricket City</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">&copy; <span id="year"></span> Tufbox — All rights reserved.</div>
+    </footer>
+
+    <script src="app.js" defer></script>
 </body>
 </html>
